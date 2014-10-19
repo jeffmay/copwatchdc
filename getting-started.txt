@@ -1,0 +1,17 @@
+### UNIX ###
+
+<ctrl> + C = send the TERM signal to the kill the program
+
+<ctrl> + D = send the EOF (end of file) character to exit the script interpreter (in your case this will be either Python or the Bash terminal you are running it in). Think of this as "quit"
+
+ps aux = show all running processes
+
+| (pipe) = a unix operating system feature that allows you to connect the output of one process into the input of another process
+
+grep = stream filter using regular expressions
+
+
+### Python ###
+
+Take this tutorial
+https://wiki.python.org/moin/BeginnersGuide/NonProgrammers
