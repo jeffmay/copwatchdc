@@ -11,6 +11,14 @@ ps aux = show all running processes
 grep = stream filter using regular expressions
 
 
+### git ###
+
+repo = repository
+
+git pull upstream master = git fetch upstream master; git merge upstream/master
+
+git fetch upstream master = fetch all the commits on the master branch from the upstream repo
+
 ### Python ###
 
 Take this tutorial
