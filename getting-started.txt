@@ -10,6 +10,16 @@ ps aux = show all running processes
 
 grep = stream filter using regular expressions
 
+man = lookup a command in the UNIX manual
+
+cd = change directory
+
+ls = list directory
+
+ls -l = list directory in "long" format which shows the file permissions
+
+If you type any command. That program must live somewhere on your "PATH" (an environment variable that contains all the directories to look for executable programs in)
+
 
 ### git ###
 
@@ -19,7 +29,74 @@ git pull upstream master = git fetch upstream master; git merge upstream/master
 
 git fetch upstream master = fetch all the commits on the master branch from the upstream repo
 
+
 ### Python ###
 
 Take this tutorial
 https://wiki.python.org/moin/BeginnersGuide/NonProgrammers
+
+TODO: Install Django
+
+
+### Heroku ###
+
+TODO: Setup Heroku for deploying the application to the web.
+
+
+### The Web ###
+
+A host is the physical machine that is servicing the HTTP requests made by browsers. All physical machines are identified by either a MAC address or IP address. A MAC address is the identity of the physical unit (think social security number), whereas the IP address is the identity of the location in the topography of the web (think mailing address). A machine may change IP addresses, but its MAC address will never change.
+
+A domain name is a mapping from URL -> IP address. A URL is what you put in the browser bar (duh!). That URL has various parts:
+
+http://example.com:80/path/to/page.html?username=jeff
+
+http:// = the scheme, which is a combination of the protocol (http) and the seperator (either ":" or "://")
+
+example.com = the domain or IP address. If you see http://127.0.0.1:80 is the URL to go to your local machine
+
+:80 = the port (defaults to 80 if left off). This is part of the IP protocol that allows you to specify a channel number, through which you will send messages (made of 1s and 0s, of course) to the host machine
+
+/path/to/page.html = the URI. This references the resource on the host machine by path. This is completely up to the application on the host machine to decide. By default, some web servers all you to enter a filename path that is relative the directory being served, and that is how you request for those files to be sent to your browser.
+
+? = the query seperator. Everything in the query is interpreted by the resource, or whatever is sending the resource. This is one common way for JavaScript / Dango to send and receive arguments to each other without requiring new URIs and different resources.
+
+username=jeff = an example of a query parameter. Multiple query parameters can be passed, and they are separated by & symbol (ie. username=jeff&age=28)
+
+
+### Project CopWatchDC.com ###
+
+GOALS:
+
+1. Setup a public web page that allows you to view videos
+2. Setup S3 to allow uploading videos from the web server
+3. Allow adding meta data about videos so that they can be searched in a database after being uploaded
+4. Secure the uploads and web forms so that they can't be hacked and so the site can't be brought down
+
+
+#1 Setup the public web site:
+
+1. You'll need a host and a domain name.
+
+host: You can create and manage the host using Heroku.
+domain: You can register the domain name with Gandi (http://www.gandi.net/) with the company slogan "No bullshit"
+
+2. You'll need to setup Django to serve a single HTML file. We'll do this together
+
+3. You'll need to setup up Amazon S3 with some demo videos
+
+4. Make the HTML page have links to the video on S3
+
+#2 Connecting Django server to S3
+
+1. You'll need to setup S3 and create the credentials to upload to the server
+
+2. These settings will have to be added to a config file that you can import from on the live server. You should NOT use the git repo to store these credentials! Github is hosting your repository publicly. Anyone can grab that key from the web.
+
+You'll have to set up the server manually with a config file.
+
+#3 Adding meta data about videos
+
+#4 Securing the site
+
+
